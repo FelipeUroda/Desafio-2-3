@@ -1,0 +1,127 @@
+body {
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #ffffff;
+}
+
+a {
+    text-decoration: none;
+}
+
+.container {
+    display: flex;
+    max-width: 1200px;
+    margin: 20px auto;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    flex-direction: column;
+    align-items: center;
+}
+
+.form-container {
+    flex: 2;
+    padding: 20px;
+}
+
+.image-container {
+    flex: 1;
+    background-color: #1f1f5e;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.image-container img {
+    max-width: 100%;
+    height: auto;
+}
+
+.form-section {
+    margin-bottom: 20px;
+}
+
+.upload-box {
+    width: 400px;
+    height: 200px;
+    border: 2px dashed #ccc;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    cursor: pointer;
+    color: #888;
+    position: relative;
+}
+
+.upload-box img {
+    width: 50px;
+    opacity: 0.5;
+}
+
+.upload-box input {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.preview {
+    margin-top: 10px;
+    max-width: 100%;
+    display: none;
+}
+
+form input, form select {
+    width: calc(100% - 22px);
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+form label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+.form-buttons {
+    text-align: right;
+}
+
+form button {
+    padding: 10px 20px;
+    margin-left: 10px;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+}
+
+form button[type="submit"] {
+    background-color: #39ff88;
+    color: white;
+}
+
+form button[type="reset"] {
+    background-color: #2f00ff;
+    color: rgb(255, 255, 255);
+
+}
+
+button[type="submit"]:hover, button[type="reset"]:hover{
+    background-color: #ff7700;
+    color: rgb(0, 0, 0);
+    box-shadow: 0 0 10px rgba(0,0,0, 0,1);
+    border-radius: 4px;
+    border: 2px solid #000;
+}
+
+button[type="reset"]:hover, button[type="submit"]:hover{
+    background-color: #ff6f00;
+    color: rgb(0, 0, 0);
+     box-shadow: 0 0 10px rgba(0,0,0, 0,1);
+    border-radius: 4px;
+    border: 2px solid #000;
+}

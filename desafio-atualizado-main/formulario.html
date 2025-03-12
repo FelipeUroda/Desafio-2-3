@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inscrição</title>
+    <link rel="stylesheet" href="./styles/styles2.css">
+</head>
+<body>
+   
+</body>
+<a href="index.html" class="botao"><img src="./img/seta.png" alt=""> Voltar</a>
+    <div class="container">
+        <h1>Página de Inscrição</h1>
+    <div class="form-container">
+    
+        <form id="inscricaoForm">
+            <h2>Formulário de Inscrição</h2>
+            <p>Preencha os dados abaixo para fazer sua inscrição no Programa.</p>
+
+            <div class="form-section">
+                <h3>Informações do Participante</h3>
+                <input type="text" id="nome" placeholder="Nome completo" required>
+                <input type="date" id="dataNascimento" required>
+                <input type="text" id="cpf" placeholder="CPF" required>
+                <select id="genero" required>
+                    <option value="">Gênero</option>
+                    <option value="masculino">Masculino</option>
+                    <option value="feminino">Feminino</option>
+                    <option value="outro">Outro</option>
+                </select>
+                <input type="email" id="email" placeholder="Email" required>
+                <input type="tel" id="telefone" placeholder="Telefone" required>
+            </div>
+
+            <div>
+                <label class="upload-box">
+                    <p>Foto do documento</p>
+                    <img src="./img/cloud-upload.png" alt="Upload Icon">
+                    <p>Clique aqui para selecionar o arquivo</p>
+                    <input type="file" id="fileInput" accept="image/*">
+                </label>
+                <img id="previewImage" class="preview">
+            </div>
+            
+            <div class="form-section">
+                <h3>Endereço Residencial</h3>
+                <input type="text" id="cep" placeholder="CEP" required>
+                <input type="text" id="rua" placeholder="Rua" required>
+                <input type="number" id="numero" placeholder="Número" required>
+                <input type="text" id="complemento" placeholder="Complemento">
+                <input type="text" id="cidade" placeholder="Cidade" required>
+                <input type="text" id="estado" placeholder="Estado" required>
+            </div>
+
+            <div>
+                <label class="upload-box">
+                    <p>Comprovante de residencia</p>
+                    <img src="./img/cloud-upload.png" alt="Upload Icon">
+                    <p>Clique aqui para selecionar o arquivo</p>
+                    <input type="file" id="fileInput" accept="image/*">
+                </label>
+                <img id="previewImage" class="preview">
+            </div>
+
+            <div class="form-section">
+                <h3>Trilhas de Aprendizagem</h3>
+                <label><input type="checkbox" name="trilha" value="back-end"> Programação Back-end <img src="./img/back-end.png" alt="Back-end"></label>
+                <label><input type="checkbox" name="trilha" value="front-end"> Programação Front-end <img src="./img/front-end.png" alt="Front-end"></label>
+                <label><input type="checkbox" name="trilha" value="jogos"> Programação de Jogos <img src="./img/icon-jogos.png" alt="Jogos"></label>
+                <label><input type="checkbox" name="trilha" value="ux"> Design UX <img src="./img/ux.png" alt="UX"></label>
+                <label><input type="checkbox" name="trilha" value="dados"> Ciência de Dados <img src="./img/Frame 48095973.png" alt="Dados"></label>
+                
+            </div>
+
+            <div class="form-section">
+                <label><input type="checkbox" id="termos" required> Declaro que li e concordo com os <b>Termos e Condições</b> e com a <b>Política de Privacidade</b>.</label>
+            </div>
+
+            <div class="form-buttons">
+                <button type="reset">Cancelar</button>
+                <button type="submit">Fazer Inscrição</button>
+            </div>
+        </form>
+    </div>
+    <div class="image-container">
+        <img src="./img/Ilustration.png" alt="Imagem Lateral">
+    </div>
+</div>
+
+    <div class="image-container-baixo">
+        <img src="./img/logo-trilhas completo.png" alt="Imagem Lateral">
+    </div>
+
+
+
+<script src="script.js"></script>
+</body>
+</html>
