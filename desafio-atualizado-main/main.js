@@ -1,34 +1,64 @@
-document.getElementById('inscricaoForm').addEventListener('submit', function(event) {
-    event.preventDefault();
+document.addEventListener("DOMContentLoaded", () => {
+  const emailInput = document.getElementById("email");
+  const erroEmail = document.querySelector(".erro-email");
+  const formularioParticipante = document.getElementById("formulario-participante");
 
-    
-    const nome = document.getElementById('nome').value;
-    const email = document.getElementById('email').value;
-    
+  emailInput.addEventListener("input", () => {
+      const emailValido = /\S+@\S+\.\S+/.test(emailInput.value);
+      erroEmail.style.display = emailValido ? "none" : "block";
+  });
 
-    
-    if (!nome || !email) {
-        alert('Por favor, preencha todos os campos obrigatórios.');
-        return;
-    }
+  formularioParticipante.addEventListener("submit", (event) => {
+      let camposObrigatoriosPreenchidos = true;
+      
+      // Verifica campos obrigatórios
+      const camposObrigatorios = formularioParticipante.querySelectorAll("[required]");
+      camposObrigatorios.forEach(campo => {
+          if (!campo.value) {
+              camposObrigatoriosPreenchidos = false;
+              campo.style.borderColor = "red"; // Destaca campos não preenchidos
+          } else {
+              campo.style.borderColor = ""; // Remove destaque se preenchido
+          }
+      });
 
-    
-    console.log('Dados do formulário:', { nome, email, /* ... */ });
-    alert('Inscrição realizada com sucesso!');
+      if (!camposObrigatoriosPreenchidos) {
+          event.preventDefault(); // Impede o envio se campos obrigatórios não preenchidos
+          alert("Por favor, preencha todos os campos obrigatórios.");
+          return;
+      }
 
-
-    this.reset();
+      if (!/\S+@\S+\.\S+/.test(emailInput.value)) {
+          event.preventDefault();
+          erroEmail.style.display = "block";
+      } else {
+          alert("Formulário enviado com sucesso! ");
+      }
+  });
 });
 
-document.getElementById("fileInput").addEventListener("change", function(event) {
-    const file = event.target.files[0];
-    if (file) {
-        const reader = new FileReader();
-        reader.onload = function(e) {
-            const preview = document.getElementById("previewImage");
-            preview.src = e.target.result;
-            preview.style.display = "block";
-        };
-        reader.readAsDataURL(file);
-    }
+document.addEventListener('DOMContentLoaded', () => {
+  const identidadeInput = document.getElementById('identidade');
+  const comprovanteInput = document.getElementById('comprovante');
+
+  identidadeInput.addEventListener('change', () => {
+      if (identidadeInput.files.length > 0) {
+          console.log('Documento de identidade selecionado:', identidadeInput.files[0]);
+      }
+  });
+
+  comprovanteInput.addEventListener('change', () => {
+      if (comprovanteInput.files.length > 0) {
+          console.log('Comprovante de residência selecionado:', comprovanteInput.files[0]);
+      }
+  });
+});
+
+const trackButtons = document.querySelectorAll('.track-button');
+
+trackButtons.forEach(button => {
+  button.addEventListener('click', () => {
+      trackButtons.forEach(btn => btn.classList.remove('selected'));
+      button.classList.add('selected');
+  });
 });
