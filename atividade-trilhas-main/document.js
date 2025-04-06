@@ -27,9 +27,7 @@ document.addEventListener("DOMContentLoaded", () => {
         event.preventDefault(); 
         alert("Por favor, preencha todos os campos obrigatórios.");
         return;
-    }
-
-    if (!/\S+@\S+\.\S+/.test(emailInput.value)) {
+    } if (!/\S+@\S+\.\S+/.test(emailInput.value)) {
         event.preventDefault();
         erroEmail.style.display = "block";
     } else {
@@ -64,6 +62,7 @@ trackButtons.forEach(button => {
     });
 });
 
+//salvar informacao de login
 function salvarCadastro() {
     let usuario = document.getElementById("cadastroUsuario").value;
     let senha = document.getElementById("cadastroSenha").value;
@@ -72,11 +71,13 @@ function salvarCadastro() {
         localStorage.setItem("usuario", usuario);
         localStorage.setItem("senha", senha);
         alert("Cadastro realizado com sucesso!");
+        window.location.href = "index.html";
     } else {
         alert("Preencha todos os campos.");
     }
 }
 
+//validar login
 function validarLogin() {
     let usuarioSalvo = localStorage.getItem("usuario");
     let senhaSalva = localStorage.getItem("senha");
