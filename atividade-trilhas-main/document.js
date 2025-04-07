@@ -1,13 +1,19 @@
 document.addEventListener("DOMContentLoaded", () => {
-    const emailInput = document.getElementById("email");
-    const erroEmail = document.querySelector(".erro-email");
-    const formularioParticipante = document.getElementById("formulario-participante");
+const formulario = document.getElementById("formulario-participante");
+const inputNome = document.getElementById("nome");
+const inputTel = document.getElementById("telefone");
+const inputCEP = document.getElementById("cep");
+const inputCPF = document.getElementById("cpf");
 
+const requisitos = [/[0-9]/, /[a-zA-Z]/];
+formulario.addEventListener("submit", function (event) {
+    event.preventDefault();
+    if (inputNome.value.match(requisitos[0])) alert("O nome não pode conter números.");
+    if (inputTel.value.match(requisitos[1])) alert("Telefone inválido.");
+    if (inputCEP.value.match(requisitos[1]) || inputCEP.value != 8) alert("CEP inválido.");
+    if (inputCPF.value.match(requisitos[1])) alert("CPF inválido.");
+});
 
-    emailInput.addEventListener("input", () => {
-        const emailValido = /\S+@\S+\.\S+/.test(emailInput.value);
-        erroEmail.style.display = emailValido ? "none" : "block";
-    });
 
     formularioParticipante.addEventListener("submit", (event) => {
         let camposObrigatoriosPreenchidos = true;
