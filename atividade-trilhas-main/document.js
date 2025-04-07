@@ -1,3 +1,4 @@
+
 document.addEventListener("DOMContentLoaded", () => {
 const formulario = document.getElementById("formulario-participante");
 const inputNome = document.getElementById("nome");
@@ -15,30 +16,37 @@ formulario.addEventListener("submit", function (event) {
 });
 
 
+
+
+
+
+
+   
     formularioParticipante.addEventListener("submit", (event) => {
         let camposObrigatoriosPreenchidos = true;
         
       // Verifica campos obrigatórios
         const camposObrigatorios = formularioParticipante.querySelectorAll("[required]");
-    camposObrigatorios.forEach(campo => {
+        camposObrigatorios.forEach(campo => {
         if (!campo.value) {
             camposObrigatoriosPreenchidos = false;
             campo.style.borderColor = "red"; 
         } else {
             campo.style.borderColor = "";
         }
-    });
+        });
 
-    if (!camposObrigatoriosPreenchidos) {
-        event.preventDefault(); 
-        alert("Por favor, preencha todos os campos obrigatórios.");
-        return;
-    } if (!/\S+@\S+\.\S+/.test(emailInput.value)) {
-        event.preventDefault();
-        erroEmail.style.display = "block";
-    } else {
-        alert("Formulário enviado com sucesso! ");
-    }
+        if (!camposObrigatoriosPreenchidos) {
+            event.preventDefault(); 
+            alert("Por favor, preencha todos os campos obrigatórios.");
+            return;
+        }
+        if (!/\S+@\S+\.\S+/.test(emailInput.value)) {
+            event.preventDefault();
+            erroEmail.style.display = "block";
+        } else {
+            alert("Formulário enviado com sucesso! ");
+        }
     });
 });
 
@@ -98,3 +106,4 @@ function validarLogin() {
         alert("Usuário ou senha incorretos.");
     }
 }
+
