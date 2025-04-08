@@ -14,13 +14,6 @@ formulario.addEventListener("submit", function (event) {
     if (inputCEP.value.match(requisitos[1]) || inputCEP.value != 8) alert("CEP inválido.");
     if (inputCPF.value.match(requisitos[1])) alert("CPF inválido.");
 });
-
-
-
-
-
-
-
    
     formularioParticipante.addEventListener("submit", (event) => {
         let camposObrigatoriosPreenchidos = true;
